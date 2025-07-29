@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Erica+One&display=swap');
-
 .loading-root {
   width: 100vw;
   height: 100vh;
@@ -8,12 +6,6 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  font-family: 'Erica One', cursive;
-  color: #fff;
-  margin-top: 20px;
-  font-size: 36px;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-  letter-spacing: 2px;
 }
 
 .liquid-center {
@@ -26,14 +18,9 @@
   height: auto;
 }
 
-
-
-.loading-title {
-  font-family: 'Erica One', cursive;
-  font-size: 48px;
-  color: #fff;
-  margin-bottom: 20px;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-  letter-spacing: 2px;
+.loading-percent {
+  color: white;
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 20px;
 }
-

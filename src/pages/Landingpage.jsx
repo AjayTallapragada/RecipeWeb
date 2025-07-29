@@ -1,19 +1,22 @@
+// LandingPage.jsx
+
 import { useRef } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import "../styles/Landing.css";
+import "../styles/AboutPage.css";
 import bg from "../assets/bg.png";
-import bg2 from "../assets/bg2.jpg";
 
 const data = [
-    {
-        id: 1,
-        text: "Whats in your fridge?",
-        text2 : "Discover recipes based on your ingredients",
-        url: bg,
-    },
+  {
+    id: 1,
+    text: "What's in your fridge?",
+    text2: "Discover recipes based on your ingredients",
+    url: bg,
+  },
 ];
 
-function Section({ text, text2, url, showButtons }) {
+function Section({ text, text2, url }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const scale = useSpring(useTransform(scrollYProgress, [0, 1], [1.05, 1.2]), {
@@ -51,57 +54,54 @@ function Section({ text, text2, url, showButtons }) {
         ))}
       </motion.h2>
 
-      <motion.p
-        className="image-subtext"
-        initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
-        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-        transition={{ duration: 1, delay: 0.5 }}
-        style={{
-          color: 'white',
-          fontSize: '1.5rem',
-          textAlign: 'center',
-          marginTop: '1rem',
-          textShadow: '0 2px 8px rgba(0,0,0,0.4)'
-        }}
-      >
-        {text2}
-      </motion.p>
-
-      <motion.p
-        className="platform-description"
+      <motion.div
+        className="image-description"
         initial={{ opacity: 0, y: 40, filter: "blur(12px)" }}
         whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-        transition={{ duration: 1, delay: 0.8 }}
-        style={{
-          color: 'white',
-          fontSize: '1.15rem',
-          textAlign: 'center',
-          marginTop: '1.5rem',
-          maxWidth: '600px',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          textShadow: '0 2px 8px rgba(0,0,0,0.4)'
-        }}
+        transition={{ duration: 1.2, delay: 0.6 }}
       >
-        Our AI-powered platform helps you cook amazing dishes with just what’s in your fridge.
-        Upload an image or enter ingredients manually and we’ll generate smart, tasty recipes
-        using cutting-edge object detection and language models.
-      </motion.p>
+        <p className="image-subtext">{text2}</p>
+        <p className="platform-description">
+          Our AI-powered platform helps you cook amazing dishes with just what’s in your fridge.
+          Upload an image or enter ingredients manually, and we’ll generate smart, tasty recipes
+          using cutting-edge object detection and language models.
+        </p>
+      </motion.div>
     </section>
   );
 }
 
 export default function LandingPage() {
   return (
-    <div className="landing-container">
-      {data.map((item, index) => (
-        <Section
-          key={item.id}
-          text={item.text}
-          url={item.url}
-          showButtons={index === data.length - 1}
-        />
-      ))}
-    </div>
+    <>
+      {/* Hero Section */}
+      <div className="landing-container">
+        {data.map((item) => (
+          <Section
+            key={item.id}
+            text={item.text}
+            text2={item.text2}
+            url={item.url}
+          />
+        ))}
+      </div>
+
+      {/* Parallax About Section */}
+      <Parallax pages={1.5} style={{ top: '100vh', position: 'absolute' }}>
+        <ParallaxLayer offset={0} speed={0.4}>
+          <div className="info-section">
+            <h1>Why We Built This</h1>
+            <p>
+              We built this platform to help reduce food waste and solve the everyday question:
+              “What can I cook with what I already have?” Our goal is to make cooking smarter and easier.
+            </p>
+            <p>
+              By combining AI, object detection, and recipe generation, we’ve created a tool that
+              helps you save money, reduce food waste, and get creative with the ingredients in your fridge.
+            </p>
+          </div>
+        </ParallaxLayer>
+      </Parallax>
+    </>
   );
 }

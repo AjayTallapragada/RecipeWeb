@@ -14,7 +14,7 @@ export default function LoadingScreen({ onFinish }) {
       ease: [0.22, 1, 0.36, 1],
       onUpdate: v => {
         setPercent(Math.floor(v));
-        setWaveY(200 - v * 2); // moves wave up as it loads
+        setWaveY(200 - v * 2);
       },
       onComplete: () => {
         setExit(true);
@@ -38,16 +38,17 @@ export default function LoadingScreen({ onFinish }) {
   }, [onFinish, x]);
 
   const wavePath = useTransform(x, v => {
-    const amplitude = 20;
-    const wavelength = 60;
-    let d = `M 0 ${waveY}`;
-    for (let i = 0; i <= 1000; i += wavelength) {
-      const y = waveY + Math.sin((i + v * 5) * 0.02) * amplitude;
-      d += ` L ${i} ${y}`;
-    }
-    d += ` L 1000 300 L 0 300 Z`;
-    return d;
-  });
+  const amplitude = 20;
+  const wavelength = 60;
+  let d = `M 0 ${waveY}`;
+  for (let i = 0; i <= 1000; i += wavelength) {
+    const y = waveY + Math.sin((i + v * 5) * 0.02) * amplitude;
+    d += ` L ${i} ${y}`;
+  }
+  d += ` L 1000 300 L 0 300 Z`;
+  return d;
+});
+
 
   return (
     <motion.div

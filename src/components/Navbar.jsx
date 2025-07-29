@@ -11,8 +11,9 @@ const Navbar = () => {
       transition={{ type: 'spring', stiffness: 70 }}
     >
       <motion.div className="logo" whileHover={{ scale: 1.1 }}>
-        <Link to="/">MyRecipes</Link>
+        <Link to="/">WYF</Link>
       </motion.div>
+
       <motion.ul className="nav-links">
         <motion.li whileHover={{ scale: 1.1 }}>
           <Link to="/">Home</Link>
@@ -24,12 +25,22 @@ const Navbar = () => {
           <Link to="/about">About</Link>
         </motion.li>
       </motion.ul>
-      <motion.div
-        className="login-button"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        <Link to="/login">Login</Link>
+
+      <motion.div className="auth-links">
+        <motion.span
+          className="login-button"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <Link to="/login">Login</Link>
+        </motion.span>
+        <motion.span
+          className="register-link"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <Link to="/register">Not a user? Register</Link>
+        </motion.span>
       </motion.div>
     </motion.nav>
   );

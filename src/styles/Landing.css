@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Erica+One&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Rubik+Mono+One&display=swap');
 .image-text {
-  font-family: 'Erica One', cursive;
+  font-family: 'Anton SC', sans-serif;
   font-size: 3.5rem;
   color: rgb(255, 255, 255);
   text-align: center;
@@ -83,8 +82,45 @@
   left: 0;
   width: 100vw;
   z-index: 1000;
-  background: rgba(0,0,0,0.5); /* Optional: semi-transparent background */
+  background: rgba(0,0,0,0.5); /* Semi-transparent background */
   color: white;
 }
 
-/* Additional styles for Navbar and LandingPage components can be added here */
+.image-description {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 1rem 2rem;
+  color: white;
+}
+
+.image-subtext {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.platform-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+  opacity: 0.95;
+}
+.image-description {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 1rem 2rem;
+  color: white;
+}
+
+.image-subtext {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.platform-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+  opacity: 0.95;
+}
