@@ -39,7 +39,7 @@ const Navbar = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <Link to="/register">Not a user? Register</Link>
+          
         </motion.span>
       </motion.div>
     </motion.nav>

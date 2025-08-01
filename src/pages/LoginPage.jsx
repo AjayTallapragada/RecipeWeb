@@ -8,16 +8,20 @@ const Login = () => {
     <div className="auth-container">
       <div className="auth-box">
         <h2>Login</h2>
-        <div className="input-group">
-          <FaUserAlt className="icon" />
-          <input type="text" placeholder="Username" />
-        </div>
-        <div className="input-group">
-          <FaLock className="icon" />
-          <input type="password" placeholder="Password" />
-        </div>
-        <button className="auth-btn">Login</button>
-        <p className="switch-link">Not a user? <Link to="/register">Register</Link></p>
+        <form>
+          <div className="input-group">
+            <span className="icon"><FaUserAlt /></span>
+            <input type="text" placeholder="Username" autoComplete="username" />
+          </div>
+          <div className="input-group">
+            <span className="icon"><FaLock /></span>
+            <input type="password" placeholder="Password" autoComplete="current-password" />
+          </div>
+          <button type="submit" className="auth-btn">Login</button>
+        </form>
+        <p className="switch-link">
+          Not a user? <Link to="/register">Register</Link>
+        </p>
       </div>
     </div>
   );

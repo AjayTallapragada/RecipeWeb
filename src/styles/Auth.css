@@ -2,66 +2,106 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   background: #f6f6f6;
 }
 
 .auth-box {
-  background: white;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  width: 320px;
+  background: #fff;
+  padding: 40px 32px 32px 32px;
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+  width: 100%;
+  max-width: 325px;
   text-align: center;
+  transition: box-shadow 0.2s;
 }
 
 .auth-box h2 {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
+  font-weight: 600;
 }
 
 .input-group {
-  position: relative;
+  display: flex;
+  align-items: center;
+  background: #f1f1f1;
+  border-radius: 8px;
   margin: 15px 0;
+  box-shadow: none;
+  position: relative;
+  transition: box-shadow 0.15s;
 }
 
 .input-group .icon {
-  position: absolute;
-  top: 50%;
-  left: 12px;
-  transform: translateY(-50%);
-  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  color: #777;
+  font-size: 16px;
+  margin-left: 2px;
+  /* ensures vertical centering */
 }
 
 .input-group input {
   width: 100%;
-  padding: 10px 10px 10px 40px;
-  border: 1px solid #ccc;
+  border: none;
+  background: transparent;
+  padding: 10px 12px 10px 0;
+  font-size: 15px;
+  outline: none;
   border-radius: 8px;
-  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.input-group:focus-within {
+  box-shadow: 0 0 0 2px #ff5a5f40;
+  background: #fff;
 }
 
 .auth-btn {
   width: 100%;
-  padding: 10px;
-  margin-top: 20px;
+  padding: 11px;
+  margin-top: 22px;
   background: #ff5a5f;
-  color: white;
+  color: #191818;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  transition: background 0.17s, box-shadow 0.17s;
+  box-shadow: 0 2px 6px rgba(255,90,95,0.10);
 }
 
-.auth-btn:hover {
+.auth-btn:hover,
+.auth-btn:focus {
   background: #e14c4c;
+  box-shadow: 0 4px 12px rgba(255,90,95,0.13);
 }
 
 .switch-link {
-  margin-top: 15px;
+  margin-top: 18px;
   font-size: 14px;
 }
 
 .switch-link a {
   color: #ff5a5f;
-  text-decoration: none;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.switch-link a:hover {
+  color: #c93d41;
+}
+
+.auth-error {
+  color: #e14c4c;
+  margin-bottom: 8px;
+  font-size: 14px;
+  text-align: left;
 }
